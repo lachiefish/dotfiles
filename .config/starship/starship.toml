@@ -1,0 +1,235 @@
+## ░█▀▀░▀█▀░█▀█░█▀▄░█▀▀░█░█░▀█▀░█▀█
+## ░▀▀█░░█░░█▀█░█▀▄░▀▀█░█▀█░░█░░█▀▀
+## ░▀▀▀░░▀░░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░░
+## CROSS-SHELL PROMPT
+##
+## rxyhn's starship configuration
+## The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = "$all $fill $git_branch$git_status$battery$time$cmd_duration$directory\n$os$character"
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+[fill]
+symbol = " "
+
+[line_break]
+disabled = true
+
+[character]
+success_symbol = "[](#6791c9)"
+error_symbol = "[](#df5b61)"
+vicmd_symbol = "[  ](#78b892)"
+
+[os]
+disabled = false
+
+[time]
+disabled = false
+use_12hr = true
+time_format = "%-I:%M"
+format = "[](fg:#232526 bg:none)[$time]($style)[](fg:#232526 bg:#232526)[](fg:#ffb86c bg:#232526)[󱑂](fg:#232526 bg:#ffb86c)[](fg:#ffb86c bg:none) "
+style = "fg:#edeff0 bg:#232526"
+
+[battery]
+full_symbol = "󱈏"
+charging_symbol = "󰂄"
+discharging_symbol = ""
+format = "[](fg:#232526 bg:none)[$symbol$percentage]($style)[](fg:#232526 bg:none) "
+
+[[battery.display]]
+threshold = 100
+style = "fg:#50fa7b bg:#232526"
+
+[[battery.display]]
+threshold = 60
+style = "fg:#8be9fd bg:#232526"
+
+[[battery.display]]
+threshold = 30
+style = "fg:#ff5555 bg:#232526"
+
+[username]
+format = "[$user](bold blue) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = true
+format = "on [$hostname](bold green) "
+disabled = false
+ssh_symbol = '  '
+
+[cmd_duration]
+min_time = 1
+format = "[](fg:#232526 bg:none)[$duration]($style)[](fg:#232526 bg:#232526)[](fg:#bc83e3 bg:#232526)[](fg:#232526 bg:#bc83e3)[](fg:#bc83e3 bg:none) "
+disabled = false
+style = "fg:#edeff0 bg:#232526"
+
+[directory]
+format = "[](fg:#232526 bg:none)[$path]($style)[](fg:#232526 bg:#232526)[](fg:#6791c9 bg:#232526)[](fg:#232526 bg:#6791c9)[](fg:#6791c9 bg:none) "
+style = "fg:#edeff0 bg:#232526"
+truncation_length = 3
+truncate_to_repo=false
+read_only = " "
+
+[git_branch]
+format = "[](fg:#232526 bg:none)[$branch]($style)[](fg:#232526 bg:#232526)[](fg:#78b892 bg:#232526)[](fg:#282c34 bg:#78b892)[](fg:#78b892 bg:none) "
+style = "fg:#edeff0 bg:#232526"
+symbol = " "
+
+[git_status]
+format="[](fg:#232526 bg:none)[$all_status$ahead_behind]($style)[](fg:#232526 bg:#232526)[](fg:#67afc1 bg:#232526)[](fg:#232526 bg:#67afc1)[](fg:#67afc1 bg:none) "
+style = "fg:#edeff0 bg:#232526"
+conflicted = "="
+ahead =	"⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = ""
+untracked = "?${count}"
+stashed = ""
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "${count}"
+
+[git_commit]
+format = "[\\($hash\\)]($style) [\\($tag\\)]($style) "
+style = "green"
+
+[git_state]
+rebase = "REBASING"
+merge =	"MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+style =	"yellow"
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+
+# NERD FONT SYMBOLS
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
+
