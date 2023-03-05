@@ -1,9 +1,3 @@
-## ░█▀▀░▀█▀░█▀█░█▀▄░█▀▀░█░█░▀█▀░█▀█
-## ░▀▀█░░█░░█▀█░█▀▄░▀▀█░█▀█░░█░░█▀▀
-## ░▀▀▀░░▀░░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░░
-## CROSS-SHELL PROMPT
-##
-## rxyhn's starship configuration
 ## The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 "$schema" = 'https://starship.rs/config-schema.json'
 
