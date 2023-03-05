@@ -471,12 +471,13 @@ lvim.plugins = {
 }
 
 -- Copilot
-lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
-table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
+-- Uncomment to use, causes errors if Copilot is not already configured so do that first
+--lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+--table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
 
-require("copilot_cmp").setup {
-  method = "getCompletionsCycling",
-}
+--require("copilot_cmp").setup {
+--  method = "getCompletionsCycling",
+--}
 
 -- Telescope Callbacks
 lvim.builtin.telescope.on_config_done = function(telescope)
