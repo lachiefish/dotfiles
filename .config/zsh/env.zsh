@@ -34,9 +34,9 @@ export GPG_TTY="${TTY:-$(tty)}"
 
 export SUDO_PROMPT="passwd: "
 export TERMINAL="kitty"
-export BROWSER="firefox"
-export VISUAL="lvim"
-export EDITOR="lvim"
+export BROWSER="google-chrome-stable"
+export VISUAL="nvim"
+export EDITOR="nvim"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
