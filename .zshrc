@@ -1,3 +1,6 @@
+# path
+export PATH="$HOME/.local/bin:$PATH"
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -9,13 +12,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # antidote
+[ ! -d "${ZDOTDIR:-~}/.antidote" ] > /dev/null || git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
 # prompt
 autoload -Uz promptinit && promptinit && prompt pure
+if command -v colorscript > /dev/null; then
+	colorscript -r
+fi
 
-# --aliases--
+# ----aliases----
 # exa
 if command -v exa > /dev/null; then
 	alias ls='exa' # just replace ls by exa and allow all other exa arguments
@@ -34,7 +41,7 @@ alias q="exit"
 # kitty
 alias s="kitty +kitten ssh"
 
-# --env variables--
+# ----env variables----
 # path
 export PATH="$HOME/.local/bin:$PATH"
 # editor
@@ -46,5 +53,4 @@ else
 	export EDITOR=vi
 fi
 
-# --other--
-colorscript -r
+
